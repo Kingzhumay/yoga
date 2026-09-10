@@ -1,0 +1,25 @@
+/**
+ * Minimal client-side error reporting hook.
+ *
+ * Production React does not rethrow errors caught by an error boundary to
+ * window.onerror, so boundary errors are surfaced here instead. Swap the
+ * console call for a real monitoring service if one is added later.
+ */
+export function reportRuntimeError(error: unknown, context: Record<string, unknown> = {}) {
+  if (typeof window === "undefined") return;
+
+  // Loaders and server fns commonly throw a raw Response; String(it) is the
+  // opaque "[object Response]", so pull out the status and URL instead.
+  const message =
+    error instanceof Response
+      ? `Response ${error.status}${error.url ? ` at ${error.url}` : ""}`
+      : error instanceof Error
+        ? error.message
+        : String(error);
+
+  console.error("[error]", message, {
+    route: window.location.pathname,
+    ...(error instanceof Error && error.stack ? { stack: error.stack } : {}),
+    ...context,
+  });
+}

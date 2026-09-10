@@ -1,0 +1,223 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Veda Yoga Studio design system.
+ * Earthy wellness palette: deep sage, warm cream, terracotta, antique gold.
+ * All colors are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-gold: var(--gold);
+  --color-gold-foreground: var(--gold-foreground);
+  --color-cream: var(--cream);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* warm cream #F5F1E8 */
+  --background: oklch(0.958 0.017 92);
+  --cream: oklch(0.958 0.017 92);
+  /* charcoal #2A2A2A */
+  --foreground: oklch(0.263 0 0);
+
+  --card: oklch(0.982 0.01 92);
+  --card-foreground: oklch(0.263 0 0);
+  --popover: oklch(0.982 0.01 92);
+  --popover-foreground: oklch(0.263 0 0);
+
+  /* deep sage #4A5D4E */
+  --primary: oklch(0.437 0.033 148);
+  --primary-foreground: oklch(0.958 0.017 92);
+
+  --secondary: oklch(0.918 0.023 92);
+  --secondary-foreground: oklch(0.33 0.03 148);
+
+  --muted: oklch(0.925 0.018 92);
+  --muted-foreground: oklch(0.48 0.014 100);
+
+  /* terracotta #C17A4D */
+  --accent: oklch(0.646 0.104 52);
+  --accent-foreground: oklch(0.98 0.01 92);
+
+  /* antique gold #B8935A */
+  --gold: oklch(0.686 0.077 78);
+  --gold-foreground: oklch(0.263 0 0);
+
+  --destructive: oklch(0.55 0.19 27);
+  --destructive-foreground: oklch(0.98 0.01 92);
+
+  --border: oklch(0.878 0.021 92);
+  --input: oklch(0.878 0.021 92);
+  --ring: oklch(0.646 0.104 52);
+
+  --sidebar: oklch(0.958 0.017 92);
+  --sidebar-foreground: oklch(0.263 0 0);
+  --sidebar-primary: oklch(0.437 0.033 148);
+  --sidebar-primary-foreground: oklch(0.958 0.017 92);
+  --sidebar-accent: oklch(0.918 0.023 92);
+  --sidebar-accent-foreground: oklch(0.33 0.03 148);
+  --sidebar-border: oklch(0.878 0.021 92);
+  --sidebar-ring: oklch(0.646 0.104 52);
+
+  --shadow-soft: 0 18px 50px -24px oklch(0.437 0.033 148 / 0.45);
+  --shadow-lift: 0 26px 60px -26px oklch(0.437 0.033 148 / 0.55);
+  --gradient-veda: linear-gradient(
+    135deg,
+    oklch(0.437 0.033 148) 0%,
+    oklch(0.33 0.03 148) 60%,
+    oklch(0.28 0.025 150) 100%
+  );
+}
+
+/* Purple premium theme — deep aubergine + violet + antique gold */
+.purple {
+  --background: oklch(0.24 0.045 300);
+  --cream: oklch(0.24 0.045 300);
+  --foreground: oklch(0.94 0.015 300);
+
+  --card: oklch(0.29 0.05 300);
+  --card-foreground: oklch(0.94 0.015 300);
+  --popover: oklch(0.29 0.05 300);
+  --popover-foreground: oklch(0.94 0.015 300);
+
+  --primary: oklch(0.62 0.19 296);
+  --primary-foreground: oklch(0.98 0.01 300);
+
+  --secondary: oklch(0.34 0.055 300);
+  --secondary-foreground: oklch(0.94 0.015 300);
+
+  --muted: oklch(0.31 0.05 300);
+  --muted-foreground: oklch(0.74 0.03 300);
+
+  --accent: oklch(0.72 0.14 298);
+  --accent-foreground: oklch(0.16 0.02 300);
+
+  --gold: oklch(0.8 0.095 82);
+  --gold-foreground: oklch(0.24 0.045 300);
+
+  --destructive: oklch(0.66 0.2 25);
+  --destructive-foreground: oklch(0.98 0.01 300);
+
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.62 0.19 296);
+
+  --sidebar: oklch(0.29 0.05 300);
+  --sidebar-foreground: oklch(0.94 0.015 300);
+  --sidebar-primary: oklch(0.62 0.19 296);
+  --sidebar-primary-foreground: oklch(0.98 0.01 300);
+  --sidebar-accent: oklch(0.34 0.055 300);
+  --sidebar-accent-foreground: oklch(0.94 0.015 300);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.62 0.19 296);
+
+  --shadow-soft: 0 18px 50px -24px oklch(0.62 0.19 296 / 0.5);
+  --shadow-lift: 0 26px 60px -26px oklch(0.62 0.19 296 / 0.6);
+  --gradient-veda: linear-gradient(
+    135deg,
+    oklch(0.62 0.19 296) 0%,
+    oklch(0.5 0.17 300) 55%,
+    oklch(0.4 0.13 304) 100%
+  );
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+}
+
+@utility text-balance-tight {
+  text-wrap: balance;
+}
+
+@utility surface-card {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility bg-veda {
+  background-image: var(--gradient-veda);
+}
